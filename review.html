@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Souvenir</title>
+
+    <link type="text/css" rel="stylesheet" href="customize.css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+
+</head>
+
+<body>
+    <div class="col-sm-offset-2 col-sm-8">
+        <form>
+            <div class="row display">
+                <span><img src="vintage.jpg" class="img-responsive" alt="Scenery" /><span>
+            
+                <span id="writing">
+                    And it is written...
+                </span>
+            </div>
+
+            <div class="row form-group">
+                <span class="col-sm-10"><input type="text" maxlength="22" class="form-control" placeholder="Sample text" id="sampleText" value="" onkeyup="generate()"/></span>
+                <span class="col-sm-2"><input type="color" class="form-control" placeholder="Sample text" id="sampleColor" value="" onchange="generate()"/></span>
+            </div>
+
+            <div class="row">
+                <span class=""><button type="" class="btn btn-primary btn-block" onclick="reset()">Reset</button></span>
+            </div>
+
+
+        </form>
+    </div>
+</body>
+
+<script type="text/javascript">
+    /*The 'generate' function takes the user's text/color input and stores them as 'one' and 'two' respectively
+    * whatever 'one' is, it is used to replace the html text in 'supertext'*/
+    
+    function generate() {
+        var text = document.getElementById("sampleText").value;
+        var color = document.getElementById("sampleColor").value;
+
+        document.getElementById("writing").innerHTML = text;
+    }
+
+    /*Reset the form to the original text*/
+    function reset() {
+        document.getElementById("writing").innerHTML = "Sample Text Here.";
+        document.getElementById("writing").style.color = "white";
+    }
+</script>
+
+</html>
